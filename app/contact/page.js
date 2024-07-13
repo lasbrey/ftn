@@ -6,7 +6,7 @@ export default function Contact() {
     return (
         <>
 
-            <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Contact">
+            <Layout headerStyle={1} footerStyle={2}>
                 <div>
                     <section className="contact">
                         <div className="container">
@@ -20,7 +20,7 @@ export default function Contact() {
                                     <div className="contact-main">
                                         <div className="block-text center">
                                             <h3 className="heading">Leave a message for us</h3>
-                                            <p className="desc fs-20">Get in touch with Rockie</p>
+                                            <p className="desc fs-20">Get in touch with Financial Trade Network</p>
                                         </div>
                                         <form>
                                             <div className="form-group">
@@ -64,7 +64,7 @@ export default function Contact() {
                                 </div>
                                 <div className="col-md-5">
                                     <div className="button">
-                                        <Link href="#">Create Account</Link>
+                                        <Link href="/register">Create Account</Link>
                                     </div>
                                 </div>
                             </div>

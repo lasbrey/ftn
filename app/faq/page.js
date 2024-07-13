@@ -2,16 +2,36 @@
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { useState } from 'react'
+
+const faqData = [
+    {
+        question: "What is the Financial Trade Network (FTN) and when was it launched?",
+        answer: "The Financial Trade Network (FTN) is a robust trading and investment platform that was launched in 2014. It serves as a comprehensive hub for traders and investors to execute trades, conduct research, and manage their portfolios effectively."
+    },
+    {
+        question: "What features does the FTN platform offer to users?",
+        answer: "FTN offers a wide range of features including real-time market data, advanced charting tools, customizable watchlists, portfolio tracking, trading alerts, and educational resources to help users make informed trading decisions."
+    },
+    {
+        question: "Is the FTN platform suitable for both beginner and experienced traders?",
+        answer: "Yes, the FTN platform caters to both beginner and experienced traders by providing intuitive user interfaces, and advanced tools to accommodate varying levels of expertise."
+    },
+    {
+        question: "How secure is the FTN platform for trading and investment activities?",
+        answer: "FTN employs state-of-the-art security measures including encryption protocols, multi-factor authentication, and regular security audits to ensure the safety of user accounts and sensitive financial information."
+    }
+];
+
 export default function Faq() {
-    const [isActive, setIsActive] = useState(1)
+    const [isActive, setIsActive] = useState(null)
 
     const handleClick = (key) => {
         setIsActive(prevState => prevState === key ? null : key)
     }
+
     return (
         <>
-
-            <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="FAQ">
+            <Layout headerStyle={1} footerStyle={2}>
                 <div>
                     <section className="faq">
                         <div className="container">
@@ -24,60 +44,14 @@ export default function Faq() {
                                 </div>
                                 <div className="col-md-12">
                                     <div className="flat-accordion">
-                                        <div className={isActive == 1 ? "flat-toggle active" : "flat-toggle"} onClick={() => handleClick(1)}>
-                                            <h6 className="toggle-title">What is Rockie</h6>
-                                            <div className="toggle-content" style={{ display: `${isActive == 1 ? "block" : "none"}` }}>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                    Tellus aliquam parturient erat id vel, condimentum a,
-                                                    hendrerit egestas. Auctor cras diam, dui pulvinar elit.
-                                                    Egestas feugiat gravida in imperdiet facilisi tortor ac
-                                                    ultrices venenatis.
-                                                </p>
-                                                <Link href="#">Learn more</Link>
+                                        {faqData.map((faq, index) => (
+                                            <div key={index} className={isActive === index ? "flat-toggle active" : "flat-toggle"} onClick={() => handleClick(index)}>
+                                                <h6 className="toggle-title">{faq.question}</h6>
+                                                <div className="toggle-content" style={{ display: `${isActive === index ? "block" : "none"}` }}>
+                                                    <p>{faq.answer}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div  className={isActive == 2 ? "flat-toggle active" : "flat-toggle"} onClick={() => handleClick(2)}>
-                                            <h6 className="toggle-title">How to start with Rockie</h6>
-                                            <div className="toggle-content" style={{ display: `${isActive == 2 ? "block" : "none"}` }}>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                    Tellus aliquam parturient erat id vel, condimentum a,
-                                                    hendrerit egestas. Auctor cras diam, dui pulvinar elit.
-                                                    Egestas feugiat gravida in imperdiet facilisi tortor ac
-                                                    ultrices venenatis.
-                                                </p>
-                                                <Link href="#">Learn more</Link>
-                                            </div>
-                                        </div>
-                                        <div  className={isActive == 3 ? "flat-toggle active" : "flat-toggle"} onClick={() => handleClick(3)}>
-                                            <h6 className="toggle-title">
-                                                What Cryptocurrencies can I use to purchase
-                                            </h6>
-                                            <div className="toggle-content" style={{ display: `${isActive == 3 ? "block" : "none"}` }}>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                    Tellus aliquam parturient erat id vel, condimentum a,
-                                                    hendrerit egestas. Auctor cras diam, dui pulvinar elit.
-                                                    Egestas feugiat gravida in imperdiet facilisi tortor ac
-                                                    ultrices venenatis.
-                                                </p>
-                                                <Link href="#">Learn more</Link>
-                                            </div>
-                                        </div>
-                                        <div  className={isActive == 4 ? "flat-toggle active" : "flat-toggle"} onClick={() => handleClick(4)}>
-                                            <h6 className="toggle-title">How to buy &amp; sell in Rockie</h6>
-                                            <div className="toggle-content" style={{ display: `${isActive == 4 ? "block" : "none"}` }}>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                    Tellus aliquam parturient erat id vel, condimentum a,
-                                                    hendrerit egestas. Auctor cras diam, dui pulvinar elit.
-                                                    Egestas feugiat gravida in imperdiet facilisi tortor ac
-                                                    ultrices venenatis.
-                                                </p>
-                                                <Link href="#">Learn more</Link>
-                                            </div>
-                                        </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +78,6 @@ export default function Faq() {
                         </div>
                     </section>
                 </div>
-
             </Layout>
         </>
     )

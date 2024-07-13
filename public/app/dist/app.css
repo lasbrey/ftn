@@ -547,7 +547,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     left: 0;
     width: 100%;
     z-index: 9999;
-    height: 50px;
+    height: 90px;
     background: var(--bg);
     display: flex;
     align-items: center;
@@ -866,9 +866,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .header .header__right .wallet a {
-    padding: 5px 10px;
+    padding: 15px;
     border: 1px solid var(--onsurface);
-    border-radius: 80px;
+    border-radius: 10px;
     font-size: 12px;
 }
 
@@ -1051,7 +1051,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .banner {
     background: var(--surface);
-    padding: 84px 0 145px;
+    padding: 84px 0 84px;
 }
 
 .banner .banner__content .title {

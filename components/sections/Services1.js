@@ -260,7 +260,7 @@ export default function Services1() {
                     with any inquiries or issues you may have.
                   </p>
                 </div>
-              </div>
+               </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ export default function Breadcrumb({ breadcrumbTitle }) {
     return (
         <>
 
-            <section className="page-title">
+            <section className="page-title px-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
