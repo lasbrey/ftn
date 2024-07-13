@@ -60,10 +60,10 @@ export default function MainMenu() {
         </li>
         <li
           className={`menu-item menu-item-has-children ${checkParentActive([
-            "/user-profile",
+            "/dashboard",
           ])}`}
         >
-          <Link href="/user-profile"> My Account </Link>
+          <Link href="/dashboard"> My Account </Link>
         </li>
       </ul>
     </>

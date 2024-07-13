@@ -2,11 +2,8 @@
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { useState } from "react"
+
 export default function Login() {
-    const [flatTabs, setFlatTabs] = useState(1)
-    const handleFlatTabs = (index) => {
-        setFlatTabs(index)
-    }
     return (
         <>
 
@@ -17,7 +14,7 @@ export default function Login() {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="block-text center">
-                                        <h3 className="heading">Login To Rockie</h3>
+                                        <h3 className="heading">Login To Financial Trade Network</h3>
                                         <p className="desc fs-20">
                                             Welcome back! Log In now to start trading
                                         </p>
@@ -29,18 +26,14 @@ export default function Login() {
                                                     <path d="M8.00039 0C5.08223 0 2.72656 2.35562 2.72656 5.27383V7.3234C3.20102 7.17391 3.69582 7.07086 4.21898 7.07086H5.07051V5.27383C5.07051 3.65652 6.38309 2.34395 8.00039 2.34395C9.6177 2.34395 10.9303 3.65652 10.9303 5.27383V7.07082H11.5163C12.1356 7.07082 12.7216 7.19777 13.2742 7.3948V5.27383C13.2742 2.35844 10.9128 0 8.00039 0Z" fill="white" />
                                                 </svg>
                                             </div>
-                                            <p><span>https://</span>accounts.rockie.com/login</p>
+                                            <p><span>https://</span>financialtradenetwork.com/login</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-12">
                                     <div className="flat-tabs">
-                                        <ul className="menu-tab">
-                                            <li className={flatTabs === 1 ? "active" : ""} onClick={() => handleFlatTabs(1)}><h6 className="fs-16">Email</h6></li>
-                                            <li className={flatTabs === 2 ? "active" : ""} onClick={() => handleFlatTabs(2)}><h6 className="fs-16">Mobile</h6></li>
-                                        </ul>
                                         <div className="content-tab">
-                                            <div className="content-inner" style={{ display: `${flatTabs === 1 ? "block" : "none"}` }}>
+                                            <div className="content-inner">
                                                 <form>
                                                     <div className="form-group">
                                                         <label htmlFor="exampleInputEmail1">Email/ID</label>
@@ -64,47 +57,7 @@ export default function Login() {
                                                     </div>
                                                 </form>
                                             </div>
-                                            <div className="content-inner" style={{ display: `${flatTabs === 2 ? "block" : "none"}` }}>
-                                                <form>
-                                                    <div className="form-group">
-                                                        <label htmlFor="exampleInputEmail1">Mobile Phone</label>
-                                                        <div>
-                                                            <select className="form-control" id="exampleFormControlSelect1">
-                                                                <option>+1</option>
-                                                                <option>+84</option>
-                                                                <option>+82</option>
-                                                                <option>+32</option>
-                                                            </select>
-                                                            <input type="text" className="form-control" placeholder="Your Phone number" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="form-group s1">
-                                                        <label>Password </label>
-                                                        <input type="password" className="form-control" placeholder="Please enter a password." />
-                                                    </div>
-                                                    <div className="form-group form-check">
-                                                        <div>
-                                                            <input type="checkbox" className="form-check-input" />
-                                                            <label className="form-check-label">Remember Me</label>
-                                                        </div>
-                                                        <p>Forgot Password?</p>
-                                                    </div>
-                                                    <button type="submit" className="btn-action">Login</button>
-                                                    <div className="bottom">
-                                                        <p>Not a member?</p>
-                                                        <Link href="/register">Register</Link>
-                                                    </div>
-                                                </form>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="qr-code center">
-                                        <img src="/assets/images/icon/qrcode.png" alt="" />
-                                        <h6 className="fs-20">Login with QR code</h6>
-                                        <p className="fs-14">
-                                            Scan this code with the <span>Rockie mobile app</span> <br />
-                                            to log in instantly.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
