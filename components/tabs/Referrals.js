@@ -11,7 +11,7 @@ export default function Referrals() {
           $1,056.00 <span>USD</span>
         </h4>
         <p>
-          You're earning 20% of the trading fees your referrals pay. Learn more
+          You're earning 10% of the trading fees your referrals pay. Learn more
         </p>
         <div className="main">
           <h6>Invite friends to earn 20%</h6>
@@ -21,7 +21,7 @@ export default function Referrals() {
               <input
                 className="form-control"
                 type="text"
-                defaultValue="https://accounts.rockie.com/login"
+                defaultValue="https://financialtradenetwork.com/login"
               />
             </div>
             <div>

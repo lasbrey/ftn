@@ -12,12 +12,7 @@ export default function ChangePassword() {
               </label>
               <input type="text" className="form-control" value={123456789} />
             </div>
-            <div>
-              <label>
-                2FA Code<span>*</span>:
-              </label>
-              <input type="text" className="form-control" />
-            </div>
+            
           </div>
           <div className="form-group">
             <div>

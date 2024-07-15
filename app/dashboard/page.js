@@ -21,7 +21,7 @@ export default function UserProfile() {
 
   return (
     <>
-      <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Dashboard">
+      <Layout headerStyle={1} footerStyle={2}>
         <div>
           <section className="user-profile flat-tabs">
             <div className="container">
