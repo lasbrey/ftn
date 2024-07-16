@@ -1,7 +1,7 @@
 import { DM_Sans, Poppins } from "next/font/google";
 import "/public/app/dist/app.css";
 import "/public/app/dist/swiper-bundle.min.css";
-import { AuthContextProvider } from "@/context/authContext";
+// import { AuthContextProvider } from "@/context/authContext";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -23,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <AuthContextProvider>
+    // <AuthContextProvider>
       <html lang="en">
         <body
           className={`${poppins.variable} ${dm.variable} body header-fixed`}
@@ -31,6 +31,6 @@ export default function RootLayout({ children }) {
           {children}
         </body>
       </html>
-    </AuthContextProvider>
+    // </AuthContextProvider>
   );
 }
