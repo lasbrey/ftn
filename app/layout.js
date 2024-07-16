@@ -17,7 +17,7 @@ const dm = DM_Sans({
 });
 
 export const metadata = {
-  title: "Financial Trade Nework | Crypto ",
+  title: "Financial Trade Network",
   description: "Your one stop crypto trading platform",
 };
 
