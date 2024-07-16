@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Banner2() {
   return (
     <>
-      <section className="banner px-5">
+      <section className="banner px-2">
         <div className="container">
           <div className="row">
             <div className="col-xl-6 col-md-12">

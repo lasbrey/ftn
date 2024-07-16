@@ -548,7 +548,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     width: 100%;
     z-index: 9999;
     height: 90px;
-    background: var(--bg);
+    background: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -570,6 +570,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), inset 0px 1px 0px #ececec;
 }
 
+.card-color {
+    background-color: #3672ff;
+}
 .header.is-fixed.is-small {
     position: fixed;
     top: 0;
@@ -643,7 +646,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .header .header__left .main-nav .menu li .sub-menu {
     padding: 16px;
-    background: var(--bg);
+    background: var(--primary);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     filter: drop-shadow(rgba(128, 138, 157, 0.12) 0px 1px 2px) drop-shadow(rgba(128, 138, 157, 0.24) 0px 8px 32px);
@@ -867,7 +870,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .header .header__right .wallet a {
     padding: 15px;
-    border: 1px solid var(--onsurface);
+    border: 1px solid white;
     border-radius: 10px;
     font-size: 12px;
 }
@@ -5536,7 +5539,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .user-profile {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .user-profile .user-info {

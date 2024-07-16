@@ -21,20 +21,20 @@ export default function MainMenu() {
 
   return (
     <>
-      <ul id="menu-primary-menu" className="menu">
+      <ul id="menu-primary-menu" className="menu text-white">
         <li
           className={`menu-item menu-item-has-children ${checkParentActive([
             "/home",
           ])}`}
         >
-          <Link href="/">Home </Link>
+          <Link className="text-white" href="/">Home </Link>
         </li>
         <li
           className={`menu-item menu-item-has-children ${checkParentActive([
             "/markets",
           ])}`}
         >
-          <Link href="/markets">Markets </Link>
+          <Link className="text-white" href="/markets">Markets </Link>
         </li>
 
         <li
@@ -42,28 +42,28 @@ export default function MainMenu() {
             "/faq",
           ])}`}
         >
-          <Link href="/faq">Faq</Link>
+          <Link className="text-white" href="/faq">Faq</Link>
         </li>
         <li
           className={`menu-item menu-item-has-children ${checkParentActive([
             "/about",
           ])}`}
         >
-          <Link href="/about">About Us</Link>
+          <Link className="text-white" href="/about">About Us</Link>
         </li>
         <li
           className={`menu-item menu-item-has-children ${checkParentActive([
             "/contact",
           ])}`}
         >
-          <Link href="/contact">Contact Us</Link>
+          <Link className="text-white" href="/contact">Contact Us</Link>
         </li>
         <li
           className={`menu-item menu-item-has-children ${checkParentActive([
             "/dashboard",
           ])}`}
         >
-          <Link href="/dashboard"> My Account </Link>
+          <Link className="text-white" href="/dashboard"> My Account </Link>
         </li>
       </ul>
     </>

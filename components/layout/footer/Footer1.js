@@ -86,7 +86,7 @@ export default function Footer1() {
                 </div>
                 <div className="container-fluid bg">
                     <div className="footer__bottom">
-                        <p>Copyright © {new Date().getFullYear()} Themesflat</p>
+                        <p>Copyright © 2014</p>
                         <ul className="list-social">
                             <li>
                                 <Link href="#"><i className="fa-brands fa-facebook" /></Link>

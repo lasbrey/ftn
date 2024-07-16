@@ -30,7 +30,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                         data-height={32}
                       />
                     </Link>
-                    <span className="network-text">
+                    <span className="network-text text-white">
                       Financial Trade Network
                     </span>
                   </div>
@@ -46,7 +46,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                 </div>
                 <div className="header__right">
                   <div className="wallet">
-                    <Link href="/login"> Register/Login </Link>
+                    <Link href="/login" className="text-white"> Register/Login </Link>
                   </div>
                   <div className="d-block d-lg-none">
                     <div

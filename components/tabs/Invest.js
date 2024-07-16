@@ -126,7 +126,7 @@ export default function Invest() {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary text-white"
                     onClick={handleInvest}
                   >
                     Invest

@@ -16,7 +16,7 @@ export default function Crypto1() {
 
   return (
     <>
-      <section className="crypto px-5" data-aos="fade-up" data-aos-duration={1000}>
+      <section className="crypto px-2" data-aos="fade-up" data-aos-duration={1000}>
         <div className="container">
           <div className="row">
             <div className="col-md-12">
