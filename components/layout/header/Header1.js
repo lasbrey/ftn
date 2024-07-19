@@ -3,10 +3,14 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import MainMenu from "../Menu";
 import MobileMenu from "../MobileMenu";
+import { UserAuth } from "@/context/authContext";
+
 const ThemeSwitch = dynamic(() => import("@/components/elements/ThemeSwitch"), {
   ssr: false,
 });
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
+  const { user } = UserAuth();
+
   return (
     <>
       <header
@@ -46,7 +50,17 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                 </div>
                 <div className="header__right">
                   <div className="wallet">
-                    <Link href="/login" className="text-white"> Register/Login </Link>
+                    {user ? (
+                      <Link href="/dashboard" className="text-white">
+                        {" "}
+                        My Account{" "}
+                      </Link>
+                    ) : (
+                      <Link href="/login" className="text-white">
+                        {" "}
+                        Register/Login{" "}
+                      </Link>
+                    )}
                   </div>
                   <div className="d-block d-lg-none">
                     <div

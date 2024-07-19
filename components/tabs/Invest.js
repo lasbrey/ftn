@@ -55,7 +55,7 @@ export default function Invest() {
 
   return (
     <div className="">
-      <h4>Invest</h4>
+      <h4>Investment</h4>
       <div className="row">
         {investmentPlans.map((plan, index) => (
           <div className="col-md-6 mb-4" key={index}>

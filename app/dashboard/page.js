@@ -12,8 +12,11 @@ import Profile from "@/components/tabs/Profile";
 import Referrals from "@/components/tabs/Referrals";
 import ChangePassword from "@/components/tabs/ChangePassword";
 import Transactions from "@/components/tabs/Transactions";
+import { UserAuth } from "@/context/authContext";
 
 export default function UserProfile() {
+  const { user, logOut } = UserAuth();
+
   const [flatTabs, setFlatTabs] = useState(1);
   const handleFlatTabs = (index) => {
     setFlatTabs(index);
@@ -41,8 +44,8 @@ export default function UserProfile() {
                         alt="no file"
                       />
                     </div>
-                    <h6 className="name">Peterson kennady</h6>
-                    <p>petersonkenn@demo.com</p>
+                    <h6 className="name">{user.displayName}</h6>
+                    <p>{user.email}</p>
                   </div>
                   <ul className="menu-tab">
                     <li
@@ -92,6 +95,9 @@ export default function UserProfile() {
                       onClick={() => handleFlatTabs(8)}
                     >
                       <h6 className="fs-16">Transactions</h6>
+                    </li>
+                    <li onClick={() => logOut()}>
+                      <h6 className="fs-16">Logout</h6>
                     </li>
                   </ul>
                 </div>

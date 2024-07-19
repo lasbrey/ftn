@@ -1,37 +1,88 @@
-// components/tabs/Transactions.js
-import React from "react";
-
-const transactions = [
-  { name: "Investment in Level One", status: "Completed", date: "2024-01-15" },
-  { name: "Withdrawal from Level Two", status: "Pending", date: "2024-01-18" },
-  { name: "Investment in Level Three", status: "Failed", date: "2024-02-01" },
-  { name: "Investment in Level Four", status: "Completed", date: "2024-02-10" },
-];
+"use client";
+import { useEffect, useState } from "react";
+import { getDocs, collection, where, query } from "firebase/firestore";
+import { db } from "@/config/firebase";
+import { UserAuth } from "@/context/authContext";
 
 export default function Transactions() {
+  const { user } = UserAuth();
+  const [transactionData, setTransactionData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (!user) {
+          return;
+        }
+
+        const userId = user.uid;
+
+        const withdrawDocs = await getDocs(
+          query(collection(db, "Withdraw"), where("userId", "==", userId))
+        );
+        const depositDocs = await getDocs(
+          query(collection(db, "Deposit"), where("userId", "==", userId))
+        );
+        const investmentDocs = await getDocs(
+          query(collection(db, "Investment"), where("userId", "==", userId))
+        );
+
+        const withdrawData = withdrawDocs.docs.map((doc) => ({
+          ...doc.data(),
+          name: "Withdraw",
+        }));
+        const depositData = depositDocs.docs.map((doc) => ({
+          ...doc.data(),
+          name: "Deposit",
+        }));
+        const investmentData = investmentDocs.docs.map((doc) => ({
+          ...doc.data(),
+          name: "Investment",
+        }));
+
+        const combinedData = [
+          ...withdrawData,
+          ...depositData,
+          ...investmentData,
+        ];
+
+        setTransactionData(combinedData);
+      } catch (error) {
+        console.error("Error fetching transaction data:", error);
+      }
+    };
+
+    fetchData();
+  }, [user]);
+
   return (
     <div className="transactions">
       <h4>Transactions</h4>
-      <div className="table-responsive">
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Transaction Name</th>
-              <th>Status</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transactions.map((transaction, index) => (
-              <tr key={index}>
-                <td>{transaction.name}</td>
-                <td>{transaction.status}</td>
-                <td>{transaction.date}</td>
+      {transactionData.length === 0 ? (
+        <p className="text-black dark:text-white">No transactions</p>
+      ) : (
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Transaction Name</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {transactionData.map((transaction, index) => (
+                <tr key={index}>
+                  <td>{transaction.name}</td>
+                  <td>{transaction.amount}</td>
+                  <td>{transaction.status}</td>
+                  <td>{transaction.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
