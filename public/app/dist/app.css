@@ -578,7 +578,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     top: 0;
     opacity: 1;
     visibility: visible;
-    background: var(--surface);
+    background: var(--primary);
 }
 
 .header .header__body {

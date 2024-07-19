@@ -59,13 +59,6 @@ export default function MobileMenu({ isMobileMenu }) {
         >
           <Link href="/contact">Contact Us</Link>
         </li>
-        <li
-          className={`menu-item menu-item-has-children ${checkParentActive([
-            "/dashboard",
-          ])}`}
-        >
-          <Link href="/dashboard"> My Account </Link>
-        </li>
       </ul>
             </nav>
 

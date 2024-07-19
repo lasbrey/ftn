@@ -8,7 +8,7 @@ export default function Footer2() {
                 <div className="container-fluid">
                     <div className="footer__bottom">
                         <p>
-                            ©{new Date().getFullYear()} Financialtradenetwork.com. All rights reserved. Terms of Service | Privacy
+                            ©2014 Financialtradenetwork.com. All rights reserved. Terms of Service | Privacy
                             Terms
                         </p>
                     </div>

@@ -58,13 +58,6 @@ export default function MainMenu() {
         >
           <Link className="text-white" href="/contact">Contact Us</Link>
         </li>
-        <li
-          className={`menu-item menu-item-has-children ${checkParentActive([
-            "/dashboard",
-          ])}`}
-        >
-          <Link className="text-white" href="/dashboard"> My Account </Link>
-        </li>
       </ul>
     </>
   );
