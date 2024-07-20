@@ -6,7 +6,7 @@ import Coinlist2 from "@/components/sections/Coinlist2";
 import Crypto1 from "@/components/sections/Crypto1";
 import Services1 from "@/components/sections/Services1";
 import Work1 from "@/components/sections/Work1";
-import Invest from "@/components/tabs/Invest";
+import Invest from "@/components/investhome";
 export default function Home2() {
   return (
     <>
