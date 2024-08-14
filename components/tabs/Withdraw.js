@@ -25,8 +25,8 @@ export default function Withdraw() {
   const [balance, setBalance] = useState(null);
   const router = useRouter();
   const withdrawId = nanoid();
-  const [selectedWallet, setSelectedWallet] = useState < string > "";
-  const [isOptionSelected, setIsOptionSelected] = useState < boolean > false;
+  const [selectedWallet, setSelectedWallet] = useState("");
+  const [isOptionSelected, setIsOptionSelected] = useState(false);
 
   const changeTextColor = () => {
     setIsOptionSelected(true);
@@ -148,7 +148,7 @@ export default function Withdraw() {
                 placeholder="Enter Wallet Addresss"
               />
             </div>
-            <button className="btn-action"  onClick={handleWithdraw}>
+            <button className="btn-action" onClick={handleWithdraw}>
               Withdraw
             </button>
           </form>

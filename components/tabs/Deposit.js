@@ -1,11 +1,11 @@
-import React,{ useState } from "react";
-import { Dialog, Transition } from '@headlessui/react';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import Swal from "sweetalert2";
 import { db } from "@/config/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { UserAuth } from "@/context/authContext";
 import { useRouter } from "next/navigation";
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 
 export default function Deposit() {
   const { user } = UserAuth();
@@ -40,9 +40,7 @@ export default function Deposit() {
     setProofImage(file || null);
   };
 
-  const uploadImageToFirebaseStorage = async (
-    image
-  ) => {
+  const uploadImageToFirebaseStorage = async (image) => {
     return "";
   };
   const handleDeposit = async () => {
@@ -140,7 +138,17 @@ export default function Deposit() {
           open={isOpen}
         >
           <div className="min-h-screen flex justify-center items-center sm:pt-4 px-4">
-
+            <Transition.Child
+              as={React.Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-30 transition-opacity" />
+            </Transition.Child>
             <Transition.Child
               as={React.Fragment}
               enter="ease-out duration-300"
@@ -195,7 +203,7 @@ export default function Deposit() {
                       </div>
                       <button
                         onClick={handleDeposit}
-                        className="flex w-full justify-center rounded bg-blue-600 p-3 font-medium text-gray hover:bg-opacity-90"
+                        className="flex w-full justify-center rounded bg-blue-600 p-3 font-medium text-gray hover:bg-opacity-90 cursor-pointer"
                       >
                         Deposit
                       </button>

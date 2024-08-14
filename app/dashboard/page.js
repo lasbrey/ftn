@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import Layout from "@/components/layout/Layout";
 import Link from "next/link";
 import { useState } from "react";
@@ -6,8 +6,10 @@ import { useState } from "react";
 // Import tab components
 import Dashboard from "@/components/tabs/Dashboard";
 import Deposit from "@/components/tabs/Deposit";
+import PendingDeposit from "@/components/tabs/PendingDeposit";
 import Invest from "@/components/tabs/Invest";
 import Withdraw from "@/components/tabs/Withdraw";
+import PendingWithdraw from "@/components/tabs/PendingWithdraw";
 import Profile from "@/components/tabs/Profile";
 import Referrals from "@/components/tabs/Referrals";
 import ChangePassword from "@/components/tabs/ChangePassword";
@@ -21,6 +23,9 @@ export default function UserProfile() {
   const handleFlatTabs = (index) => {
     setFlatTabs(index);
   };
+
+  // Check if the user's email is in the allowed list
+  const isAllowedEmail = user.email === 'lazarusosilawal@gmail.com' || user.email === 'Khuteken123@gmail.com';
 
   return (
     <>
@@ -78,6 +83,22 @@ export default function UserProfile() {
                     >
                       <h6 className="fs-16">Profile</h6>
                     </li>
+                    {isAllowedEmail && (
+                      <>
+                        <li
+                          className={flatTabs === 9 ? "active" : ""}
+                          onClick={() => handleFlatTabs(9)}
+                        >
+                          <h6 className="fs-16">Pending Deposit</h6>
+                        </li>
+                        <li
+                          className={flatTabs === 10 ? "active" : ""}
+                          onClick={() => handleFlatTabs(10)}
+                        >
+                          <h6 className="fs-16">Pending Withdraw</h6>
+                        </li>
+                      </>
+                    )}
                     <li
                       className={flatTabs === 6 ? "active" : ""}
                       onClick={() => handleFlatTabs(6)}
@@ -109,6 +130,8 @@ export default function UserProfile() {
                     {flatTabs === 3 && <Invest />}
                     {flatTabs === 4 && <Withdraw />}
                     {flatTabs === 5 && <Profile />}
+                    {isAllowedEmail && flatTabs === 9 && <PendingDeposit />}
+                    {isAllowedEmail && flatTabs === 10 && <PendingWithdraw />}
                     {flatTabs === 6 && <Referrals />}
                     {flatTabs === 7 && <ChangePassword />}
                     {flatTabs === 8 && <Transactions />}

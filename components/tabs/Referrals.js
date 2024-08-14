@@ -8,7 +8,7 @@ export default function Referrals() {
       >
         <h6>Total rewards</h6>
         <h4>
-          $1,056.00 <span>USD</span>
+          $0.00 <span>USD</span>
         </h4>
         <p>
           You're earning 10% of the trading fees your referrals pay. Learn more
