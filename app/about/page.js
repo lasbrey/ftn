@@ -1,6 +1,6 @@
 'use client'
-import VideoPopup from "@/components/elements/VideoPopup"
-import Layout from "@/components/layout/Layout"
+import VideoPopup from "../../components/elements/VideoPopup"
+import Layout from "../../components/layout/Layout"
 import Link from "next/link"
 export default function About() {
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Swal from "sweetalert2";
-import { db } from "@/config/firebase";
+import { db } from "../../config/firebase";
 import { addDoc, collection } from "firebase/firestore";
-import { UserAuth } from "@/context/authContext";
+import { UserAuth } from "../../context/authContext";
 import { useRouter } from "next/navigation";
 import { nanoid } from "nanoid";
 

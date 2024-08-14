@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import ChatList from "@/components/chart/ChatList";
+import ChatList from "../../components/chart/ChatList";
 import IconStar from "../elements/IconStar";
 import { fetchCryptoData } from './fetchData';
 

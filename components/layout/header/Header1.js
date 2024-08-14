@@ -3,9 +3,9 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import MainMenu from "../Menu";
 import MobileMenu from "../MobileMenu";
-import { UserAuth } from "@/context/authContext";
+import { UserAuth } from "../../../context/authContext";
 
-const ThemeSwitch = dynamic(() => import("@/components/elements/ThemeSwitch"), {
+const ThemeSwitch = dynamic(() => import("../../../components/elements/ThemeSwitch"), {
   ssr: false,
 });
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {

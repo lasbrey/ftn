@@ -1,20 +1,20 @@
 'use client'
-import Layout from "@/components/layout/Layout";
+import Layout from "../../components/layout/Layout";
 import Link from "next/link";
 import { useState } from "react";
 
 // Import tab components
-import Dashboard from "@/components/tabs/Dashboard";
-import Deposit from "@/components/tabs/Deposit";
-import PendingDeposit from "@/components/tabs/PendingDeposit";
-import Invest from "@/components/tabs/Invest";
-import Withdraw from "@/components/tabs/Withdraw";
-import PendingWithdraw from "@/components/tabs/PendingWithdraw";
-import Profile from "@/components/tabs/Profile";
-import Referrals from "@/components/tabs/Referrals";
-import ChangePassword from "@/components/tabs/ChangePassword";
-import Transactions from "@/components/tabs/Transactions";
-import { UserAuth } from "@/context/authContext";
+import Dashboard from "../../components/tabs/Dashboard";
+import Deposit from "../../components/tabs/Deposit";
+import PendingDeposit from "../../components/tabs/PendingDeposit";
+import Invest from "../../components/tabs/Invest";
+import Withdraw from "../../components/tabs/Withdraw";
+import PendingWithdraw from "../../components/tabs/PendingWithdraw";
+import Profile from "../../components/tabs/Profile";
+import Referrals from "../../components/tabs/Referrals";
+import ChangePassword from "../../components/tabs/ChangePassword";
+import Transactions from "../../components/tabs/Transactions";
+import { UserAuth } from "../../context/authContext";
 
 export default function UserProfile() {
   const { user, logOut } = UserAuth();
@@ -24,7 +24,7 @@ export default function UserProfile() {
     setFlatTabs(index);
   };
 
-  
+
   const isAllowedEmail = user.email === 'lazarusosilawal@gmail.com' || user.email === 'Khuteken123@gmail.com';
 
   return (

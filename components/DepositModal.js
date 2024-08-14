@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { db } from '@/config/firebase';
+import { db } from '../config/firebase';
 import { collection, getDocs, where, query, updateDoc, doc } from 'firebase/firestore';
 import Swal from 'sweetalert2';
 

@@ -1,7 +1,7 @@
 import { DM_Sans, Poppins } from "next/font/google";
 import "/public/app/dist/app.css";
 import "/public/app/dist/swiper-bundle.min.css";
-import { AuthContextProvider } from "@/context/authContext";
+import { AuthContextProvider } from "../context/authContext";
 import Script from 'next/script';
 
 const poppins = Poppins({

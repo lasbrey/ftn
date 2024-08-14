@@ -1,6 +1,6 @@
 "use client";
-import Layout from "@/components/layout/Layout";
-import Coinlist2 from "@/components/sections/Coinlist2";
+import Layout from "../../components/layout/Layout";
+import Coinlist2 from "../../components/sections/Coinlist2";
 import { useState } from "react";
 export default function Markets() {
   const [flatTabs, setFlatTabs] = useState(1);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getDocs, collection, query, where } from 'firebase/firestore';
-import { db } from '@/config/firebase';
-import { UserAuth } from "@/context/authContext";
+import { db } from '../../config/firebase';
+import { UserAuth } from "../../context/authContext";
 import DepositModal from "../DepositModal";
 
 export default function PendingDeposits() {

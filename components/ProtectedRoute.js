@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import { UserAuth } from '@/context/authContext';
+import { UserAuth } from '../context/authContext';
 
 const ProtectedRoute = ({ children }) => {
   const { user } = UserAuth();

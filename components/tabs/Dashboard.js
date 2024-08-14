@@ -1,8 +1,8 @@
 "use client";
 import React, {useState, useEffect} from 'react';
 import { getDocs, collection, where, query } from 'firebase/firestore';
-import { db } from '@/config/firebase';
-import { UserAuth } from "@/context/authContext";
+import { db } from '../../config/firebase';
+import { UserAuth } from "../../context/authContext";
 
 
 export default function Dashboard() {
