@@ -24,7 +24,7 @@ export default function UserProfile() {
     setFlatTabs(index);
   };
 
-  // Check if the user's email is in the allowed list
+  
   const isAllowedEmail = user.email === 'lazarusosilawal@gmail.com' || user.email === 'Khuteken123@gmail.com';
 
   return (
