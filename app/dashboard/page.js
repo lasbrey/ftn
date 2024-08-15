@@ -10,6 +10,7 @@ import PendingDeposit from "../../components/tabs/PendingDeposit";
 import Invest from "../../components/tabs/Invest";
 import Withdraw from "../../components/tabs/Withdraw";
 import PendingWithdraw from "../../components/tabs/PendingWithdraw";
+import UpdateBalance from "../../components/tabs/UpdateBalance";
 import Profile from "../../components/tabs/Profile";
 import Referrals from "../../components/tabs/Referrals";
 import ChangePassword from "../../components/tabs/ChangePassword";
@@ -97,6 +98,12 @@ export default function UserProfile() {
                         >
                           <h6 className="fs-16">Pending Withdraw</h6>
                         </li>
+                        <li
+                          className={flatTabs === 11 ? "active" : ""}
+                          onClick={() => handleFlatTabs(11)}
+                        >
+                          <h6 className="fs-16">Update Users Balance</h6>
+                        </li>
                       </>
                     )}
                     <li
@@ -132,6 +139,7 @@ export default function UserProfile() {
                     {flatTabs === 5 && <Profile />}
                     {isAllowedEmail && flatTabs === 9 && <PendingDeposit />}
                     {isAllowedEmail && flatTabs === 10 && <PendingWithdraw />}
+                    {isAllowedEmail && flatTabs === 11 && <UpdateBalance />}
                     {flatTabs === 6 && <Referrals />}
                     {flatTabs === 7 && <ChangePassword />}
                     {flatTabs === 8 && <Transactions />}

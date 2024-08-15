@@ -35,8 +35,8 @@ export default function Dashboard() {
         const pendingDeposits = pendingQuerySnapshot.docs.map((doc) => doc.data());
 
         const balanceDoc = balanceQuerySnapshot.docs[0];
-
         if (balanceDoc) {
+          
           const totalBalance = balanceDoc.data().balance;
           setTotalBalance(totalBalance);
         } else {

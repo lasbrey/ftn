@@ -229,7 +229,9 @@
 .bg-blue-500 {
   background-color: #4299e1;
 }
-
+.ml-4{
+  margin-left: 4px;
+}
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
