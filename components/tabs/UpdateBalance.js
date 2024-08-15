@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { UserAuth } from "../../context/authContext";
 import DataTable from "react-data-table-component";
@@ -17,9 +17,20 @@ export default function UpdateBalance() {
       try {
         const usersCollection = collection(db, "users");
         const usersSnapshot = await getDocs(usersCollection);
-        const usersList = usersSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
+        const usersList = await Promise.all(usersSnapshot.docs.map(async (doc) => {
+          const userData = { id: doc.id, ...doc.data() };
+          // Fetch balance, deposit, and withdraw for this user
+          const balanceRef = collection(db, "Balance");
+          const balanceQuery = query(balanceRef, where("userId", "==", userData.userId));
+          const balanceSnapshot = await getDocs(balanceQuery);
+          
+          // Get balance
+          const balanceData = balanceSnapshot.docs.length > 0 ? balanceSnapshot.docs[0].data() : { balance: 0 };
+
+          return {
+            ...userData,
+            balance: balanceData.balance || 0,
+          };
         }));
 
         setUsers(usersList);
@@ -45,6 +56,11 @@ export default function UpdateBalance() {
     {
       name: "Email",
       selector: (row) => row.email,
+      sortable: true,
+    },
+    {
+      name: "Balance",
+      selector: (row) => row.balance,
       sortable: true,
     }
   ];
