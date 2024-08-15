@@ -119,6 +119,7 @@ export default function Deposit() {
                   );
                 }}
               >
+                <option value="">Select Option</option>
                 <option value="BTC">BTC</option>
                 <option value="USDT">USDT</option>
               </select>
