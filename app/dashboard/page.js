@@ -25,7 +25,7 @@ export default function UserProfile() {
   };
 
 
-  const isAllowedEmail = user.email === 'lazarusosilawal@gmail.com' || user.email === 'Khuteken123@gmail.com';
+  const isAllowedEmail = user.email === 'lazarusosilawal@gmail.com' || user.email === 'khuteken123@gmail.com';
 
   return (
     <>
